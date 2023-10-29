@@ -1,17 +1,19 @@
-/* CSS for index.html */
-
-/* Global styles */
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Arial, sans-serif";
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Header */
@@ -19,6 +21,7 @@ header {
   background-color: #333;
   color: #fff;
   padding: 20px;
+  transition: background-color 0.3s;
 }
 
 .header-content {
@@ -39,6 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0;
 }
 
 .nav-menu li {
@@ -47,11 +51,10 @@ header {
 
 .nav-menu li a {
   color: #fff;
-  text-decoration: none;
   font-size: 16px;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
   background-image: url("hero-image.jpg");
   background-size: cover;
@@ -59,6 +62,17 @@ header {
   color: #fff;
   padding: 100px 0;
   text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .hero h1 {
@@ -71,7 +85,7 @@ header {
   margin-bottom: 40px;
 }
 
-/* Features section */
+/* Features Section */
 .features {
   display: flex;
   justify-content: center;
@@ -88,6 +102,12 @@ header {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .feature-box h3 {
@@ -108,30 +128,17 @@ footer {
   text-align: center;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
 
-  .nav-menu {
-    margin-top: 20px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .features {
-    justify-content: flex-start;
-  }
-
-  .feature-box {
-    width: 100%;
-  }
+.btn:hover {
+  background-color: #555;
 }
